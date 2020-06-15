@@ -23,7 +23,7 @@ function Beer() {
     const numberChange = (e) => {
         setValues({
             ...values,
-            number: parseInt(e.target.value)
+            number: parseFloat(e.target.value)
         })
     }
     const containerChange = (e) => {
