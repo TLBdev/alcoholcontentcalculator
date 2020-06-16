@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
 import '../App.css';
-import { alc_ml_util, alc_oz_util } from '../utils/alc_util'
+
 
 function Wine() {
     const [values, setValues] = useState({
         amount: 0,
         container: 0,
         total: 0,
-        abv: 0,
-        glass: false
+        glass: false,
+        professional: false,
+        home: false
     })
     const handleSubmit = (e) => {
         e.preventDefault()
-
+        setValues({
+            ...values,
+            total: (values.amount * values.container) * .12
+        })
     }
     const amountChange = (e) => {
         setValues({
@@ -25,7 +29,14 @@ function Wine() {
         setValues({
             ...values,
             container: parseInt(e.target.value),
-            draft: e.target.id === 'Glass'
+            glass: e.target.id === 'Glass'
+        })
+    }
+    const locationChange = (e) => {
+        setValues({
+            ...values,
+            professional: e.target.id === "Poured By Professional",
+            home: e.target.id === "Poured by Self/Friend/Family"
         })
     }
     return (
@@ -45,21 +56,26 @@ function Wine() {
                     <input type="radio" id="8oz Can/Bottle" name="container" value='236.588' onClick={containerChange} />
                     <label for="8oz Can/Bottle">8oz Can/Bottle</label><br />
                 </div>
-                <div>
-                    <input type="radio" id="Poured By Professional" name="container" value='750' onClick={containerChange} />
-                    <label for="Poured By Professional">Poured By Professional</label><br />
-                    <input type="radio" id="Poured by Self/Friend/Family" name="container" value='750' onClick={containerChange} />
-                    <label for="Poured by Self/Friend/Family">Poured by Self/Friend/Family</label><br />
-                </div>
-                <div>
-                    <input type="radio" id="Red" name="container" value='750' onClick={containerChange} />
-                    <label for="Red">Red</label><br />
-                    <input type="radio" id="White" name="container" value='750' onClick={containerChange} />
-                    <label for="White">White</label><br />
-                    <input type="radio" id="Pink" name="container" value='750' onClick={containerChange} />
-                    <label for="Pink">Pink</label><br />
-                </div>
+
+                {values && values.glass ?
+                    <><h3>Poured By</h3>
+                        <div>
+                            <input type="radio" id="Poured By Professional" name="pouredBy" value='750' onClick={locationChange} />
+                            <label for="Poured By Professional">Poured By Professional</label><br />
+                            <input type="radio" id="Poured by Self/Friend/Family" name="pouredBy" value='750' onClick={locationChange} />
+                            <label for="Poured by Self/Friend/Family">Poured by Self/Friend/Family</label><br />
+                        </div></> : null}
+                <button type='submit'>Calculate</button>
             </form>
-        </div >
+            <div>{`${values.total} ml, ${values.total / 18} standard drinks(US), ${values.total / 10} units(UK)`}</div>
+            {values.professional ? <p> Glasses of wine served on location have been shown to have an average overpour of 43.3%(Kerr et al., 2008) The following numbers have been adjusted to reflect this.</p> : null}
+
+            {values.professional ? <div>{`${values.total * 1.433} ml, ${(values.total * 1.433) / 18} standard drinks(US), ${(values.total * 1.433) / 10} units(UK)`}</div> : null}
+
+            {values.home ? <p> Glasses of wine served at home have been shown to have particularly high variance(Kerr et al., 2005). It may be more reliable to calculate this number again with the amount of the bottle that was consumed if possible.</p> : null}
+
+        </div>
+
     )
 }
+export default Wine;
