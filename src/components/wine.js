@@ -46,9 +46,11 @@ function Wine() {
         })
     }
     const goBack = (e) => {
+        e.stopPropagation()
+
         setValues({
             ...values,
-            slideCounter: values.slideCounter === 4 ? 0 : values.slideCounter - 1,
+            slideCounter: values.slideCounter - 1,
             glass: values.slideCounter === 4 ? !values.glass : values.glass
         })
     }
@@ -61,13 +63,13 @@ function Wine() {
     return (
         <div className="App-header">
             <form onSubmit={handleSubmit}>
-                <button onClick={goBack}>Go Back</button>
+                <button type='button' onClick={goBack}>Go Back</button>
                 <p>Note: Please use decimals when noting partial containers</p>
                 {values && values.slideCounter === 1 ?
                     <div>
                         <h3>Amount</h3>
                         <input type='text' value={values.volume} onChange={amountChange} />
-                        <button onClick={goForward}>Continue</button>
+                        <button type='button' onClick={goForward}>Continue</button>
                     </div> : null}
 
                 {values && values.slideCounter === 0 ?
