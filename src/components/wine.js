@@ -50,8 +50,8 @@ function Wine() {
 
         setValues({
             ...values,
-            slideCounter: values.slideCounter - 1,
-            glass: values.slideCounter === 4 ? !values.glass : values.glass
+            slideCounter: values && values.slideCounter === 4 ? 0 : values.slideCounter - 1,
+            glass: values.slideCounter === 4 ? false : values.glass
         })
     }
     const goForward = (e) => {
@@ -63,7 +63,7 @@ function Wine() {
     return (
         <div className="App-header">
             <form onSubmit={handleSubmit}>
-                <button type='button' onClick={goBack}>Go Back</button>
+                {values && values.slideCounter > 0 ? <button type='button' onClick={goBack}>Go Back</button> : null}
                 <p>Note: Please use decimals when noting partial containers</p>
                 {values && values.slideCounter === 1 ?
                     <section>
@@ -100,11 +100,11 @@ function Wine() {
             {values && values.slideCounter === 3 ?
                 <section>
                     <div>{`${values.total} ml, ${values.total / 18} standard drinks(US), ${values.total / 10} units(UK)`}</div>
-                    {values.professional ? <p> Glasses of wine served on location have been shown to have an average overpour of 43.3%(Kerr et al., 2008) The following numbers have been adjusted to reflect this.</p> : null}
+                    {values.glass && values.professional ? <p> Glasses of wine served on location have been shown to have an average overpour of 43.3%(Kerr et al., 2008) The following numbers have been adjusted to reflect this.</p> : null}
 
-                    {values.professional ? <div>{`${values.total * 1.433} ml, ${(values.total * 1.433) / 18} standard drinks(US), ${(values.total * 1.433) / 10} units(UK)`}</div> : null}
+                    {values.glass && values.professional ? <div>{`${values.total * 1.433} ml, ${(values.total * 1.433) / 18} standard drinks(US), ${(values.total * 1.433) / 10} units(UK)`}</div> : null}
 
-                    {values.home ? <p> Glasses of wine served at home have been shown to have particularly high variance(Kerr et al., 2005). It may be more reliable to calculate this number again with the amount of the bottle that was consumed if possible.</p> : null}
+                    {values.glass && values.home ? <p> Glasses of wine served at home have been shown to have particularly high variance(Kerr et al., 2005). It may be more reliable to calculate this number again with the amount of the bottle that was consumed if possible.</p> : null}
                 </section> : null}
         </div>
 

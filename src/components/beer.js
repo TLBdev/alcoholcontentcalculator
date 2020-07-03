@@ -51,7 +51,7 @@ function Beer() {
     const goBack = (e) => {
         setValues({
             ...values,
-            slideCounter: values.slideCounter - 1,
+            slideCounter: values.slideCounter === 0 ? 0 : values.slideCounter - 1,
             draft: values.slideCounter === 1 ? false : values.draft
         })
     }
@@ -64,7 +64,7 @@ function Beer() {
     return (
         <div className="App-header">
             <form onSubmit={handleSubmit}>
-                <button type='button' onClick={goBack}>Go Back</button>
+                {values && values.slideCounter > 0 ? <button type='button' onClick={goBack}>Go Back</button> : null}
                 {values && values.slideCounter === 2 ? <Number numberChange={numberChange} values={values} /> : null}
                 {values && values.slideCounter === 1 ? <Container containerChange={containerChange} /> : null}
                 {values && values.slideCounter === 0 ? <Beverage beverageChange={beverageChange} /> : null}
