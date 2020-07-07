@@ -55,12 +55,7 @@ function Beer() {
             draft: values.slideCounter === 1 ? false : values.draft
         })
     }
-    const goForward = (e) => {
-        setValues({
-            ...values,
-            slideCounter: values.slideCounter + 1
-        })
-    }
+
     return (
         <div className="App-header">
             <form onSubmit={handleSubmit}>

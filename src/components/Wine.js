@@ -57,12 +57,7 @@ function Wine() {
             glass: values.slideCounter === 4 ? false : values.glass
         })
     }
-    const goForward = (e) => {
-        setValues({
-            ...values,
-            slideCounter: values.slideCounter + 1
-        })
-    }
+
     return (
         <div className="App-header">
             <form onSubmit={handleSubmit}>

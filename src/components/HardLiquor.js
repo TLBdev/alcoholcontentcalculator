@@ -11,7 +11,7 @@ function HardLiquor() {
     })
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(values)
+
         let result = 0
         result = alc_ml_util(alc_oz_util(values.amount * values.container), values.abv)
         setValues({
