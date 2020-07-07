@@ -2,8 +2,8 @@ import React from 'react';
 
 function Beverage(props) {
     return (<section>
-        <div>Beverage Type</div>
-        <div className='beverageCont'>
+        <h3 className='secTitle'>Beverage Type</h3>
+        <div classname='secContent' >
             <div><input type="radio" id="Light Domestic" name="beverage" value="4" onClick={props.beverageChange} />
                 <label for="Light Domestic">Light Domestic(~4% ABV, Bud Light, Keystone Light, etc.)</label></div>
             <div><input type="radio" id="Standard Domestic" name="beverage" value="5" onClick={props.beverageChange} />
@@ -17,7 +17,7 @@ function Beverage(props) {
             <div><input type="radio" id="High ABV Craft" name="beverage" value="10" onClick={props.beverageChange} />
                 <label for="High ABV Craft">High ABV Craft (~10% abv, Imperial Stout, Wheatwine, etc.) </label></div>
             <div><input type="radio" id="Average Malt Liquor" name="beverage" value="7" onClick={props.beverageChange} />
-                <label for="High ABV Malt Liquor">Average Malt Liquor (~7% abv, Mickey's, Steel Reserve, etc.) </label></div>
+                <label for="Average ABV Malt Liquor">Average Malt Liquor (~7% abv, Mickey's, Steel Reserve, etc.) </label></div>
             <div><input type="radio" id="High ABV Malt Liquor" name="beverage" value="12" onClick={props.beverageChange} />
                 <label for="High ABV Malt Liquor">High ABV Malt Liquor (~12% abv, Four Loko, Blast Colt 45, etc.) </label></div>
 

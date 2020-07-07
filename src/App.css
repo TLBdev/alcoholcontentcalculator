@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  color: black;
+  
 }
 
 .App-logo {
@@ -14,14 +16,14 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  
+  max-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
 }
 
 .App-link {
@@ -40,4 +42,38 @@
   width: 70%;
   display: flex;
   flex-wrap: wrap;
+}
+
+nav {
+  background-color: whitesmoke;
+  width: 100vw;
+  height: 7vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.navButton {
+  
+  width: 10%;
+  background-color: whitesmoke;
+  text-align: center;
+}
+
+.navButtonSelected {
+  width: 10%;
+  background-color: whitesmoke;
+  text-align: center;
+  border-bottom: 2px solid black;
+}
+
+.infoCont{
+  height: 80vh;
+  width: 60vw
+}
+
+section {
+  height: 80vh;
+  width: 48vw
 }

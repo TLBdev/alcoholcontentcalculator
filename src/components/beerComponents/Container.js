@@ -2,7 +2,7 @@ import React from 'react';
 
 function Container(props) {
     return (<section>
-        <div>Container</div>
+        <h3>Container</h3>
         <input type="radio" id="12oz Can/Bottle" name="container" value='12' onClick={props.containerChange} />
         <label for="12oz Can/Bottle">12oz Can/Bottle</label><br />
         <input type="radio" id="16oz Can/Bottle" name="container" value='16' onClick={props.containerChange} />

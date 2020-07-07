@@ -1,3 +1,6 @@
+This is a project created by request for an alcohol researcher with the purpose of providing a more accurate estimate of standard drinks.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
