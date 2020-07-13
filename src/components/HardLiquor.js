@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import { alc_ml_util, alc_oz_util } from '../utils/alc_util'
 import singleShot from '../alcImg/singleShot/shot-glasses-1532293-639x555.jpg'
-import highball from '../alcImg/highball/soft-drink-1-1492569-640x480.jpg'
+import doubleShot from '../alcImg/double shot/flame-shot-1187258-640x480.jpg'
+import highball from '../alcImg/highball/whiskey-626254_640.jpg'
+import highball2 from '../alcImg/highball2/alcohol-1869282_640.jpg'
 import strongCocktails from '../alcImg/cocktail/cocktails-of-the-deep-south-1323527-639x427.jpg'
-import weakCocktail from '../alcImg/light cocktail/cocktail-1576706-639x852.jpg'
+import weakCocktail from '../alcImg/light cocktail/cocktail-3327242_640.jpg'
 import frozenCocktail from '../alcImg/frozen cocktail/lime-closeup-1580143-639x427.jpg'
+import soloCup from '../alcImg/solo cup/red-cup-1327412-639x557.jpg'
 
 function HardLiquor() {
     const [values, setValues] = useState({
@@ -33,7 +36,6 @@ function HardLiquor() {
 
     }
     const abvChange = (e) => {
-        console.log(e.currentTarget.attributes.value.value)
         setValues({
             ...values,
             abv: parseFloat(e.currentTarget.attributes.value.value),
@@ -44,7 +46,7 @@ function HardLiquor() {
     const containerChange = (e) => {
         setValues({
             ...values,
-            container: parseFloat(e.target.value),
+            container: parseFloat(e.currentTarget.attributes.value.value),
             slideCounter: values.slideCounter + 1
         })
 
@@ -71,10 +73,10 @@ function HardLiquor() {
                         <label for="Shot">Shot</label>
                     </div>
                     <div className='imgDiv' id="Single-Shot Highball" name="drinkType" value='13' onClick={abvChange} >
-                        <img alt='a glass of soda' src={highball} />
+                        <img alt='a mixed drink with soda' src={highball} />
                         <label for="Single">Single</label></div>
                     <div className='imgDiv' id="Double-Shot Highball" name="drinkType" value='26' onClick={abvChange} >
-                        <img alt='a glass of soda' src={highball} />
+                        <img alt='a mixed drink with soda and lime' src={highball2} />
                         <label for="Double">Double</label>
                     </div>
                     <div className='imgDiv' id="Strong Cocktail" name="drinkType" value='35' onClick={abvChange} >
@@ -90,20 +92,32 @@ function HardLiquor() {
                         <label for="Frozen Cocktail">Frozen Cocktail (Margherita, Pina Colada, Daquiri)</label>
                     </div>
                 </section> : null}
-                {values && values.slideCounter === 1 ? <section>
+                {values && values.slideCounter === 1 ? <section className='secWithImg'>
                     <h3>Container</h3>
-                    <input type="radio" id="Cocktail Specific Glass" name="container" value='2.5' onClick={containerChange} />
-                    <label for="Cocktail Specific Glass">Cocktail Specific Glass (Martini Glass, Lowball Glass)</label><br />
-                    <input type="radio" id="Disposable Plastic Cup" name="container" value='16' onClick={containerChange} />
-                    <label for="Disposable Plastic Cup">Disposable Plastic Cup (Red Solo Cup)</label><br />
-                    <input type="radio" id="Highball Glass" name="container" value='14' onClick={containerChange} />
-                    <label for="Highball Glass">Highball Glass</label><br />
-                    <input type="radio" id="Tall Glass" name="container" value='16' onClick={containerChange} />
-                    <label for="Tall Glass">Tall Glass</label><br />
-                    <input type="radio" id="Standard Shot Glass" name="container" value='1.5' onClick={containerChange} />
-                    <label for="Standard Shot Glass">Standard Shot Glass</label><br />
-                    <input type="radio" id="Tall/Double Shot Glass" name="container" value='3' onClick={containerChange} />
-                    <label for="Tall/Double Shot Glass">Tall/Double Shot Glass</label>
+                    <div className='imgDiv' id="Cocktail Specific Glass" name="container" value='2.5' onClick={containerChange} >
+                        <img alt='several cocktails' src={strongCocktails} />
+                        <label for="Cocktail Specific Glass">Cocktail Specific Glass (Martini Glass, Lowball Glass)</label>
+                    </div>
+                    <div className='imgDiv' id="Disposable Plastic Cup" name="container" value='16' onClick={containerChange} >
+                        <img alt='a red solo cup' src={soloCup} />
+                        <label for="Disposable Plastic Cup">Disposable Plastic Cup (Red Solo Cup)</label>
+                    </div>
+                    <div className='imgDiv' id="Short Glass" name="container" value='14' onClick={containerChange} >
+                        <img alt='a mixed drink with soda' src={highball} />
+                        <label for="Short Glass">Short Glass</label>
+                    </div>
+                    <div className='imgDiv' id="Tall Glass" name="container" value='16' onClick={containerChange} >
+                        <img alt='a mixed drink with soda and lime' src={highball2} />
+                        <label for="Tall Glass">Tall Glass</label>
+                    </div>
+                    <div className='imgDiv' id="Standard Shot Glass" name="container" value='1.5' onClick={containerChange} >
+                        <img alt='a shot glass' src={singleShot} />
+                        <label for="Standard Shot Glass">Standard Shot Glass</label>
+                    </div>
+                    <div className='imgDiv' id="Tall/Double Shot Glass" name="container" value='3' onClick={containerChange} >
+                        <img alt='a tall shot glass' src={doubleShot} />
+                        <label for="Tall/Double Shot Glass">Tall/Double Shot Glass</label>
+                    </div>
                 </section> : null}
                 {values && values.slideCounter === 2 ? <section>
                     <h3>Amount</h3>
