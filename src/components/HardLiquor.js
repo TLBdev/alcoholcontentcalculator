@@ -39,7 +39,8 @@ function HardLiquor() {
         setValues({
             ...values,
             abv: parseFloat(e.currentTarget.attributes.value.value),
-            slideCounter: values.slideCounter + 1
+            container: e.currentTarget.attributes.id.value === 'Single-Shot Highball' ? 1.5 : e.currentTarget.attributes.id.value === 'Double-Shot Highball' ? 3 : 0,
+            slideCounter: e.currentTarget.attributes.id.value === 'Single-Shot Highball' ? values.slideCounter + 2 : e.currentTarget.attributes.id.value === 'Double-Shot Highball' ? values.slideCounter + 2 : values.slideCounter + 1
         })
 
     }
@@ -72,10 +73,10 @@ function HardLiquor() {
                         <img alt='a shot glass' src={singleShot} />
                         <label for="Shot">Shot</label>
                     </div>
-                    <div className='imgDiv' id="Single-Shot Highball" name="drinkType" value='13' onClick={abvChange} >
+                    <div className='imgDiv' id="Single-Shot Highball" name="drinkType" value='40' onClick={abvChange} >
                         <img alt='a mixed drink with soda' src={highball} />
                         <label for="Single">Single</label></div>
-                    <div className='imgDiv' id="Double-Shot Highball" name="drinkType" value='26' onClick={abvChange} >
+                    <div className='imgDiv' id="Double-Shot Highball" name="drinkType" value='40' onClick={abvChange} >
                         <img alt='a mixed drink with soda and lime' src={highball2} />
                         <label for="Double">Double</label>
                     </div>
