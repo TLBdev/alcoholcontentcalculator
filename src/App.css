@@ -109,3 +109,25 @@ h3 {
   text-align: center;
   width: 100%;
 }
+
+.buttonDiv{
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 3%;
+  padding-right: 3%;
+  text-align: left;
+  margin-bottom: 1%;
+  height: 5vh
+}
+
+p{
+  font-size: 1.7vw;
+}
+
+@media (orientation: portrait){
+  p{
+    font-size: 1.9vh;
+  }
+}

@@ -5,11 +5,15 @@ function PouredBy(props) {
         <section>
             <h3>Poured By</h3>
             <div>
-                <input type="radio" id="Poured By Professional" name="pouredBy" value='750' onClick={props.locationChange} />
-                <label for="Poured By Professional">Poured By Professional</label><br />
-                <input type="radio" id="Poured by Self/Friend/Family" name="pouredBy" value='750' onClick={props.locationChange} />
-                <label for="Poured by Self/Friend/Family">Poured by Self/Friend/Family</label><br />
+                <div className='buttonDiv' id="Poured By Professional" name="pouredBy" value='750' onClick={props.locationChange} >
+                    <p>Poured By Professional</p>
+                    <h4>{'>'}</h4>
+                </div>
+                <div className='buttonDiv' id="Poured by Self/Friend/Family" name="pouredBy" value='750' onClick={props.locationChange} >
+                    <p>Poured by Self/Friend/Family</p>
+                    <h4>{'>'}</h4>
+                </div>
             </div>
-        </section>)
+        </section >)
 }
 export default PouredBy

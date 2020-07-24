@@ -24,6 +24,7 @@ function Wine() {
         })
     }
     const amountChange = (e) => {
+
         setValues({
             ...values,
             amount: parseFloat(e.target.value)
@@ -31,20 +32,19 @@ function Wine() {
 
     }
     const containerChange = (e) => {
-
         setValues({
             ...values,
-            container: parseInt(e.target.value),
-            glass: e.target.id === 'Glass',
-            slideCounter: e.target.id === "Glass" ? 4 : 1
+            container: parseInt(e.currentTarget.attributes.value.value),
+            glass: e.currentTarget.attributes.id.value === 'Glass',
+            slideCounter: e.currentTarget.attributes.id.value === "Glass" ? 4 : 1
         })
 
     }
     const locationChange = (e) => {
         setValues({
             ...values,
-            professional: e.target.id === "Poured By Professional",
-            home: e.target.id === "Poured by Self/Friend/Family",
+            professional: e.currentTarget.attributes.id.value === "Poured By Professional",
+            home: e.currentTarget.attributes.id.value === "Poured by Self/Friend/Family",
             slideCounter: 1
         })
     }

@@ -10,7 +10,7 @@ import soloCup from '../../alcImg/solo cup/red-cup-1327412-639x557.jpg'
 
 export default function ImgCredits() {
     return (
-        <section>
+        <div>
             <h3>Image Credits</h3>
             <img src={strongCocktails} />
             <p>Photo by <a href="/photographer/theswedish-32171">Roger Kirby</a> from <a href="https://freeimages.com/">FreeImages</a></p>
@@ -33,6 +33,6 @@ export default function ImgCredits() {
             <img src={soloCup} />
             <p>Photo by <a href="/photographer/drig-53011">David Rigotti</a> from <a href="https://freeimages.com/">FreeImages</a>
             </p>
-        </section>
+        </div>
     )
 }

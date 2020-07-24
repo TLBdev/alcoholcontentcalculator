@@ -2,8 +2,8 @@ import React from 'react'
 
 export default function Citations() {
     return (
-        <section>
+        <div>
             <h4>Citations</h4>
-        </section>
+        </div>
     )
 }

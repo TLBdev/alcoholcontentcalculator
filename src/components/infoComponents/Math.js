@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Math() {
     return (
-        <section>
+        <div>
             <h2>The Math</h2>
             <h3>Alcohol Content in ml</h3>
             <p>total_ml * (abv / 100)</p>
@@ -46,6 +46,6 @@ export default function Math() {
             <p>Tall Glass: 16oz</p>
             <p>Standard Shot Glass: 1.5oz</p>
             <p>Tall/Double Shot Glass: 3oz</p>
-        </section>
+        </div>
     )
 }

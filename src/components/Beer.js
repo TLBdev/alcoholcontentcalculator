@@ -35,8 +35,8 @@ function Beer() {
 
         setValues({
             ...values,
-            container: parseInt(e.target.value),
-            draft: e.target.id === '16oz Draught/Draft',
+            container: parseInt(e.currentTarget.attributes.value.value),
+            draft: e.currentTarget.attributes.id.value === '16oz Draught/Draft',
             slideCounter: values.slideCounter + 1
         })
     }
@@ -44,7 +44,7 @@ function Beer() {
 
         setValues({
             ...values,
-            beverage: parseFloat(e.target.value),
+            beverage: parseFloat(e.currentTarget.attributes.value.value),
             slideCounter: values.slideCounter + 1
         })
     }

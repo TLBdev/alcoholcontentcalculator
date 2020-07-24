@@ -5,6 +5,8 @@ import Wine from './components/Wine'
 import HardLiquor from './components/HardLiquor'
 import Info from './components/Info'
 import NavBar from './components/NavBar'
+
+
 function App() {
   const [navigation, setNavigation] = useState('')
   function handleNav(e) {
