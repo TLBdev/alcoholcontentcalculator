@@ -1,5 +1,5 @@
 import React from 'react'
-import ImgCredits from './infoComponents/ImgCredits'
+
 import Math from './infoComponents/Math'
 import Limitations from './infoComponents/Limitations'
 import Citations from './infoComponents/Citations'
@@ -12,7 +12,7 @@ function Info() {
             <Math />
             <Limitations />
             <Citations />
-            <ImgCredits />
+
         </div>
     )
 }
