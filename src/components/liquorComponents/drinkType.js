@@ -10,10 +10,10 @@ function DrinkType(props) {
             <h4>{'>'}</h4>
         </div>
         <div className='buttonDiv' id="Single-Shot Highball" name="drinkType" value='40' onClick={props.abvChange} >
-            <p for="Single">Single</p>
+            <p for="Single">Single-Shot Highball(Rum and Coke, Seven and Seven)</p>
             <h4>{'>'}</h4></div>
         <div className='buttonDiv' id="Double-Shot Highball" name="drinkType" value='40' onClick={props.abvChange} >
-            <p for="Double">Double</p>
+            <p for="Double">Double-Shot Highball(Rum and Coke, Seven and Seven)</p>
             <h4>{'>'}</h4>
         </div>
         <div className='buttonDiv' id="Strong Cocktail" name="drinkType" value='35' onClick={props.abvChange} >
