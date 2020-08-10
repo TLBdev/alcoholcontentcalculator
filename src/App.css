@@ -57,13 +57,16 @@ nav {
 }
 
 .navButton {
-  
+  text-decoration: none;
+  color: black;
   width: 10%;
   background-color: whitesmoke;
   text-align: center;
 }
 
 .navButtonSelected {
+  text-decoration: none;
+  color: black;
   width: 10%;
   background-color: whitesmoke;
   text-align: center;
