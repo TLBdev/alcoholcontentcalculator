@@ -13,14 +13,24 @@ function App() {
   const [navigation, setNavigation] = useState('')
 
   const [values, setValues] = useState({
-    amount: 0,
+    abv: 0,
     container: 0,
+    amount: "",
     total: 0,
     glass: false,
     professional: false,
     home: false,
     draft: false,
-    slideCounter: 0
+    slideCounter: 0,
+    actionCode: {
+      bevType: "00",
+      contType: "00",
+      glass: "NA",
+      professional: "NA",
+      home: "NA",
+      draft: "NA",
+      amount: "00"
+    }
   })
 
   function handleNav(e) {

@@ -14,14 +14,14 @@ function Beer(props) {
 
     return (
         <div className="App-header">
-            <p>{location.pathname}</p>
+
             <Switch>
-                <Route exact path='/beer'><Beverage beverageChange={props.beverageChange} /></Route>
-                <Route path='/beer/amount'><Number numberChange={props.numberChange} values={props.values} /></Route>
-                <Route path='/beer/container'><Container containerChange={props.containerChange} /></Route>
-                <Route path='/beer/result'><Results values={props.values} /></Route>
+                <Route exact path='/beer'><Beverage setValues={props.setValues} values={props.values} /></Route>
+                <Route path='/beer/amount'><Number setValues={props.setValues} values={props.values} /></Route>
+                <Route path='/beer/container'><Container setValues={props.setValues} values={props.values} /></Route>
+                <Route path='/beer/result'><Results setValues={props.setValues} values={props.values} /></Route>
             </Switch>
-            <p>{location.pathname}</p>
+
         </div>
     );
 }
