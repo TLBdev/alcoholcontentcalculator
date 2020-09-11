@@ -1,16 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../App.css';
 import Container from './beerComponents/Container'
 import Beverage from './beerComponents/Beverage'
 import Number from './beerComponents/Number'
 import Results from './beerComponents/Results'
-import { alc_ml_util, alc_oz_util } from '../utils/alc_util'
-import { Route, Switch, useLocation } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 
 function Beer(props) {
-
-    const location = useLocation()
 
     return (
         <div className="App-header">

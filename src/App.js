@@ -10,7 +10,6 @@ import Main from './components/Main'
 
 
 function App() {
-  const [navigation, setNavigation] = useState('')
 
   const [values, setValues] = useState({
     abv: 0,
@@ -33,12 +32,9 @@ function App() {
     }
   })
 
-  function handleNav(e) {
-    setNavigation(e.target.id)
-  }
   return (
     <div className="App-header">
-      <NavBar handleNav={handleNav} navigation={navigation} />
+      <NavBar setValues={setValues} />
       <Switch>
         <Route exact path='/'><Main /></Route>
         <Route path='/beer'><Beer values={values} setValues={setValues} /></Route>

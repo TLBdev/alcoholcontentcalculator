@@ -12,7 +12,8 @@ function Container(props) {
                 container: parseInt(e.currentTarget.attributes.value.value),
                 actionCode: {
                     ...props.values.actionCode,
-                    contType: e.currentTarget.attributes.code.value
+                    contType: e.currentTarget.attributes.code.value,
+                    draft: e.currentTarget.attributes.code.value === "DR" ? "01" : "00"
                 }
             }
         )
