@@ -10,6 +10,10 @@ function DrinkType(props) {
         props.setValues(
             {
                 ...props.values,
+                container: e.currentTarget.attributes.code.value === "SH"
+                    || e.currentTarget.attributes.code.value === "DH"
+                    ? e.currentTarget.attributes.code.value === "DH"
+                        ? 3 : 1.5 : 0,
                 abv: parseInt(e.currentTarget.attributes.value.value),
                 highball: e.currentTarget.attributes.code.value === "SH" || e.currentTarget.attributes.code.value === "DH",
                 shot: e.currentTarget.attributes.code.value === "ST",
@@ -20,7 +24,11 @@ function DrinkType(props) {
                 }
             }
         )
-        history.push('/liquor/container')
+        if (e.currentTarget.attributes.code.value === "SH" || e.currentTarget.attributes.code.value === "DH") {
+            history.push('/liquor/amount')
+        } else {
+            history.push('/liquor/container')
+        }
     }
 
 
