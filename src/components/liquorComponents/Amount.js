@@ -21,7 +21,7 @@ function Amount(props) {
     }
 
     function handleSubmit(e) {
-        console.log(props.values)
+
         props.setValues(
             {
                 ...props.values,
