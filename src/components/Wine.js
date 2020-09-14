@@ -7,7 +7,7 @@ import Results from './wineComponents/Results'
 import { Switch, Route } from 'react-router-dom';
 
 function Wine(props) {
-    console.log(props.values)
+
     return (
         <div className="App-header">
             <Switch>

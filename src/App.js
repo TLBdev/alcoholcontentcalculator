@@ -20,12 +20,15 @@ function App() {
     professional: false,
     home: false,
     draft: false,
+    highball: false,
+    shot: false,
     slideCounter: 0,
     actionCode: {
       bevType: "00",
       contType: "00",
       glass: "NA",
       professional: "NA",
+      highball: "NA",
       home: "NA",
       draft: "NA",
       amount: "00"

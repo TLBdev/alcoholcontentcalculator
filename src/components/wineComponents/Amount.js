@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom'
-import { alc_oz_util, alc_ml_util } from '../../utils/alc_util'
+import { alc_ml_util } from '../../utils/alc_util'
 function Amount(props) {
 
     const history = useHistory()
