@@ -42,10 +42,16 @@ export default function Math() {
             <h4>Containers</h4>
             <p>Cocktail Specific Glass: 2.5oz (appears to be the average size for strong cocktails, not empirically tested)</p>
             <p>Disposable Plastic Cup: 16oz</p>
-            <p>Highball Glass: 14oz</p>
+            <p>Short Glass: 14oz</p>
             <p>Tall Glass: 16oz</p>
             <p>Standard Shot Glass: 1.5oz</p>
             <p>Tall/Double Shot Glass: 3oz</p>
+            <p>Highballs use a the value of single or double shot depending on selection.</p>
+            <h4>Alcohol Content</h4>
+            <p>Shots and Highballs: 40% </p>
+            <p>Strong Cocktail: 35%</p>
+            <p>Weak Cocktail: 13%</p>
+            <p>Frozen Cocktail: 8%</p>
         </div>
     )
 }

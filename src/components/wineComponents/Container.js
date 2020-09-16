@@ -34,7 +34,7 @@ function Container(props) {
                 <p>Glass</p>
                 <h4>{'>'}</h4>
             </div>
-            <div className="buttonDiv" code='12' id="12oz Can/Bottle" name="container" value='354.882' onClick={containerChange} >
+            <div className="buttonDiv" code='CB' id="12oz Can/Bottle" name="container" value='354.882' onClick={containerChange} >
                 <p>12oz Can/Bottle</p>
                 <h4>{'>'}</h4>
             </div>

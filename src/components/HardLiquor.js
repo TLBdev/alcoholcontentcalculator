@@ -1,4 +1,5 @@
 import React from 'react'
+import '../App.css';
 import DrinkType from './liquorComponents/drinkType'
 import Container from './liquorComponents/Container'
 import Amount from './liquorComponents/Amount'
