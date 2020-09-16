@@ -1,11 +1,12 @@
 import React from 'react'
-
+import '../App.css';
 
 function Info() {
     return (
         <div className='infoCont'>
-            <h1>Landing Stub</h1>
-
+            <section>
+                <h1>Landing Stub</h1>
+            </section>
         </div>
     )
 }
