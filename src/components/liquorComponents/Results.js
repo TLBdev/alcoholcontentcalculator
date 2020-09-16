@@ -3,6 +3,7 @@ import React from 'react'
 function Results(props) {
     return (
         <section>
+            <h3>Results</h3>
             <div>{`${props.values.total.toFixed(4)} ml, ${(props.values.total / 18).toFixed(4)} standard drinks(US), ${(props.values.total / 10).toFixed(4)} units(UK)`}</div>
             {props.values.highball ?
                 <div>
