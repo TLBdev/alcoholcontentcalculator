@@ -17,9 +17,10 @@ function Amount(props) {
             }
         )
 
+
     }
 
-    function handleSubmit(e) {
+    function handleSubmit() {
         props.setValues(
             {
                 ...props.values,
