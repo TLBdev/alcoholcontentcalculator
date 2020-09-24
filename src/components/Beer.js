@@ -14,9 +14,9 @@ function Beer(props) {
 
             <Switch>
                 <Route exact path='/beer'><Beverage setValues={props.setValues} values={props.values} /></Route>
-                <Route path='/beer/amount'><Number setValues={props.setValues} values={props.values} /></Route>
+                <Route path='/beer/amount'><Number setValues={props.setValues} values={props.values} cart={props.cart} setCart={props.setCart} /></Route>
                 <Route path='/beer/container'><Container setValues={props.setValues} values={props.values} /></Route>
-                <Route path='/beer/result'><Results setValues={props.setValues} values={props.values} /></Route>
+                <Route path='/beer/result'><Results setValues={props.setValues} values={props.values} cart={props.cart} setCart={props.setCart} /></Route>
             </Switch>
 
         </div>

@@ -5,8 +5,8 @@ import Beer from './components/Beer'
 import Wine from './components/Wine'
 import HardLiquor from './components/HardLiquor'
 import Info from './components/Info'
-import NavBar from './components/NavBar'
 import Main from './components/Main'
+import Cart from "./components/Cart"
 
 
 function App() {
@@ -35,16 +35,24 @@ function App() {
     }
   })
 
+  const [cart, setCart] = useState({
+    list: [],
+    total: 0,
+    idTicker: 0
+  })
+
   return (
-    <div className="App-header">
-      <NavBar setValues={setValues} />
-      <Switch>
-        <Route exact path='/'><Main /></Route>
-        <Route path='/beer'><Beer values={values} setValues={setValues} /></Route>
-        <Route path='/wine'><Wine values={values} setValues={setValues} /></Route>
-        <Route path='/liquor'><HardLiquor values={values} setValues={setValues} /></Route>
-        <Route path='/info'><Info /></Route>
-      </Switch>
+    <div className="App-header-one">
+      <Cart cart={cart} setCart={setCart} />
+      <div>
+        <Switch>
+          <Route exact path='/'><Main cart={cart} setCart={setCart} values={values} setValues={setValues} /></Route>
+          <Route path='/beer'><Beer values={values} setValues={setValues} cart={cart} setCart={setCart} /></Route>
+          <Route path='/wine'><Wine values={values} setValues={setValues} cart={cart} setCart={setCart} /></Route>
+          <Route path='/liquor'><HardLiquor values={values} setValues={setValues} cart={cart} setCart={setCart} /></Route>
+          <Route path='/info'><Info /></Route>
+        </Switch>
+      </div>
     </div>
   );
 }

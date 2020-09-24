@@ -13,8 +13,8 @@ function HardLiquor(props) {
             <Switch>
                 <Route exact path='/liquor'><DrinkType setValues={props.setValues} values={props.values} /></Route>
                 <Route path='/liquor/container'><Container setValues={props.setValues} values={props.values} /></Route>
-                <Route path='/liquor/amount'><Amount setValues={props.setValues} values={props.values} /></Route>
-                <Route path='/liquor/result'><Results values={props.values} /></Route>
+                <Route path='/liquor/amount'><Amount setValues={props.setValues} values={props.values} cart={props.cart} setCart={props.setCart} /></Route>
+                <Route path='/liquor/result'><Results setValues={props.setValues} values={props.values} cart={props.cart} setCart={props.setCart} /></Route>
             </Switch>
 
         </div>
