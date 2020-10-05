@@ -60,10 +60,7 @@ function Main(props) {
                     <p>Info</p>
                     <h4>{'>'}</h4>
                 </div>
-                <Link to='/wine' name="Wine" onClick={reset} >Wine</Link>
-                <Link to='/beer' name="Beer" onClick={reset} >Beer</Link>
-                <Link to='/liquor' name="Liquor" onClick={reset} >Liquor</Link>
-                <Link to='/info' >Info</Link>
+                
             </section>
         </div>
     )
